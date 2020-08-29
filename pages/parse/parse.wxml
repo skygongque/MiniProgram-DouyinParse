@@ -1,0 +1,17 @@
+<!-- pages/parse/parse.wxml -->
+<view class="wrap">
+    <view class="search-row">
+        <input bindinput="getInputValue" placeholder="请输入链接" value="{{inputValue}}"></input>
+        <button bindtap="verifyAndRequest">去水印</button>
+    </view>
+    <!-- wx:if="{{result!==null}}" -->
+    <view class="result-buttons" wx:if="{{result!==null}}">
+        <!-- <button size="mini" bindtap="saveCover">下载封面</button> -->
+        <button size="mini" bindtap="clearText" >清空文字</button>
+        <button size="mini" bindtap="saveVideo" wx:if="{{result.tested === true}}" >下载视频</button>
+        <button size="mini" bindtap="copyText">复制视频链接</button>
+    </view>
+    <view class="result-video">
+        <video wx:if="{{result!==null}}" src="{{result.playAddress}}"></video>
+    </view>
+</view>
