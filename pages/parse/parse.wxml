@@ -14,4 +14,5 @@
     <view class="result-video">
         <video wx:if="{{result!==null}}" src="{{result.playAddress}}"></video>
     </view>
+    <navigator class="intr-text" wx:if="{{result==null}}" url="/pages/intr/intr" >使用方法</navigator>
 </view>

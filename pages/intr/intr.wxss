@@ -1,0 +1,12 @@
+/* pages/intr/intr.wxss */
+.intr-text{
+    padding: 15rpx;
+}
+.image-wrap{
+    display: flex;
+    justify-content: center;
+    padding: 10rpx;
+}
+.text-bold{
+    font-weight: bold;
+}

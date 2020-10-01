@@ -1,0 +1,14 @@
+<view class="intr-text" >
+    <view class="text-bold">使用方法</view>
+    <view class="normal">1、打开短视频APP，点开某个视频，点击右下角分享按钮，在分享弹框中点击复制链接</view>
+    <view class="normal">2、将刚才复制的链接粘贴到下面的输入框，例如</view>
+    <view>
+        <text class="normal" selectable='true'>抖音：https://v.douyin.com/JJTDEKL</text>
+    </view>
+    <view>
+        <text class="normal" selectable='true'>快手：https://v.kuaishou.com/8CU76w</text>
+    </view>
+</view>
+<view class="image-wrap">
+    <image src="../../pics/example.png" mode="widthFix" style="width=150rpx;" />
+</view>

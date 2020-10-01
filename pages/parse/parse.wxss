@@ -74,3 +74,9 @@
     align-items: center;
     width: 100%;
 }
+.intr-text{
+    margin-top: 20rpx;
+    display: flex;
+    justify-content: center;
+    color: #007acc;
+}

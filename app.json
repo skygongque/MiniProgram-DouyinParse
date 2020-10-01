@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/parse/parse",
+    "pages/intr/intr",
     "pages/index/index",
     "pages/logs/logs"
   ],

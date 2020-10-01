@@ -31,8 +31,12 @@ Page({
     var url = this.data.url;
     // console.log(url);
     var pattern = new RegExp("(https{0,1}://.*?douyin\.com\/[a-zA-Z0-9]+)");
+    var patternKuaishou = new RegExp(/(https*:\/\/v\.kuaishou\.com\/[a-zA-Z0-9]{6})/);
     if (pattern.test(url)){
       this.parse(RegExp.$1)
+    }else if(patternKuaishou.test(url)){
+      console.log(RegExp.$1);
+      this.parseKuaishou(RegExp.$1);
     }else{
       console.log("输入正确的url")
       wx.showToast({
@@ -44,6 +48,24 @@ Page({
     var that = this;
     wx.cloud.callFunction({
       name: "parseVideo",
+      data: {
+        "url": url
+      },
+      success(res) {
+        console.log("云函数获取数据成功", res)
+        that.setData({
+          result: res.result
+        })
+      },
+      fail(err) {
+        console.log("云函数获取数据失败", err)
+      }
+    })
+  },
+  parseKuaishou: function(url){
+    var that = this;
+    wx.cloud.callFunction({
+      name: "parseKuaiShou",
       data: {
         "url": url
       },
@@ -74,7 +96,9 @@ Page({
   },
   saveVideo: function(){
     var tempUrl = this.data.result.playAddress;
-    tempUrl = tempUrl.replace('http',"https");
+    if (tempUrl.search("https") == -1){
+      tempUrl = tempUrl.replace('http',"https");
+    }
     console.log(tempUrl);
     downLoadVideo(tempUrl);
     // DownloadSaveFile.downloadFile("video",tempUrl)

@@ -3,7 +3,7 @@ App({
   onLaunch: function () {
     // 初始化云开发环境
     wx.cloud.init({
-      env:"填写自己的环境id"
+      env:"mike-50kvs"
     });
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []

@@ -28,12 +28,12 @@
 			"outputPath": ""
 		},
 		"useIsolateContext": true,
-		"useCompilerModule": false,
+		"useCompilerModule": true,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.12.1",
-	"appid": "填写自己的appid",
+	"appid": "yourappid",
 	"projectname": "douyin-miniprogram",
 	"debugOptions": {
 		"hidedInDevtools": []
