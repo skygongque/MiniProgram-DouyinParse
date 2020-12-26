@@ -92,7 +92,7 @@ async function parse(res_json) {
             // })
             var downloadFileUrls = ["https://v6-dy-cold.ixigua.com", "https://v3-dy-cold.ixigua.com", "https://v5-dy-c.ixigua.com", "https://v95-dy-a.ixigua.com", "https://v5-dy-j.ixigua.com", "https://v5-dy-g.ixigua.com", "https://v5-dy-e.ixigua.com", "https://v5-dy-i.ixigua.com", "https://v5-dy-b.ixigua.com", "https://v92-dy.ixigua.com", "https://v9-dy-cold.ixigua.com", "https://v29-dy-cold.ixigua.com", "https://v5-dy-f.ixigua.com", "https://v95-dy.ixigua.com", "https://v5-dy-h.ixigua.com", "https://v26-dy-cold.ixigua.com", "https://v27-dy-cold.ixigua.com"];
             for (var j = 0; j < downloadFileUrls.length; j++) {
-                if (realAddress[j] !== -1) {
+                if (realAddress.search(downloadFileUrls[j]) !== -1) {
                     tested = true;
                     break
                 }
