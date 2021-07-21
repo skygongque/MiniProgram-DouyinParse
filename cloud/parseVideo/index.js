@@ -82,7 +82,7 @@ async function parse(res_json) {
         var paly_address = playwm.replace('playwm', 'play')
         var cover = res_json['item_list'][0]['video']['origin_cover']['url_list'][0];
         // 尝试5次 使得realAddress尽可能在downloadFile合法域名中
-        for (var i = 1; i < 6; i++) {
+        for (var i = 1; i < 5; i++) {
             try_count += 1;
             var realAddress = await getRealAddress(paly_address);
             console.log(realAddress);
@@ -91,14 +91,15 @@ async function parse(res_json) {
             // }, (err) => {
             //     console.log(err)
             // })
-            var downloadFileUrls = ["http://v6-dy-cold.ixigua.com", "http://v3-dy-cold.ixigua.com", "http://v5-dy-c.ixigua.com", "http://v95-dy-a.ixigua.com", "http://v5-dy-j.ixigua.com", "http://v5-dy-g.ixigua.com", "http://v5-dy-e.ixigua.com", "http://v5-dy-i.ixigua.com", "http://v5-dy-b.ixigua.com", "http://v92-dy.ixigua.com", "http://v9-dy-cold.ixigua.com", "http://v29-dy-cold.ixigua.com", "http://v5-dy-f.ixigua.com", "http://v95-dy.ixigua.com", "http://v5-dy-h.ixigua.com", "http://v26-dy-cold.ixigua.com", "http://v27-dy-cold.ixigua.com"];
+            var downloadFileUrls = ['http://v83.douyinvod.com', 'http://v6-cold.douyinvod.com', 'http://v1-cold.douyinvod.com',
+                'http://v5-coldb.douyinvod.com', 'http://v29-cold.douyinvod.com', 'http://v83-x.douyinvod.com', 'http://v83-y.douyinvod.com', 'http://v6-y.douyinvod.com', 'http://v5-coldy.douyinvod.com', 'http://v95.douyinvod.com', 'http://v3-cold.douyinvod.com', 'http://v5-cold.douyinvod.com', 'http://v3-c.douyinvod.com', 'http://v9-cold.douyinvod.com', 'http://v26-cold.douyinvod.com', 'http://v11.douyinvod.com', 'http://v5-coldc.douyinvod.com'];
             for (var j = 0; j < downloadFileUrls.length; j++) {
                 if (realAddress.search(downloadFileUrls[j]) !== -1) {
                     tested = true;
                     break
                 }
             }
-            if (tested==true) break;
+            if (tested == true) break;
         }
         return {
             'code': 1,
@@ -117,7 +118,6 @@ async function getRealAddress(url) {
     var pattern = new RegExp('href=\"(.*?)\"');
     if (pattern.test(res.body)) {
         return RegExp.$1;
-        // console.log(RegExp.$1)
     }
 
 }
@@ -137,7 +137,7 @@ async function main(url) {
     }
 }
 
-
+// test
 // !async function () {
 //     var res = await main('https://v.douyin.com/JJTDEKL');
 //     console.log(res)

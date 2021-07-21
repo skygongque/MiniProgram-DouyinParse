@@ -37,7 +37,7 @@ https://github.com/skygongque/MiniProgram-DouyinParse
 
 以下域名与[云函数文件](./cloud/parseVideo/index.js)的94行的数组对应（但要注意一处是http一处是https），可以自行增加提高效率。
 ```
-https://v26-dy-cold.ixigua.com;https://v27-dy-cold.ixigua.com;https://v29-dy-cold.ixigua.com;https://v3-dy-cold.ixigua.com;https://v5-dy-b.ixigua.com;https://v5-dy-c.ixigua.com;https://v5-dy-e.ixigua.com;https://v5-dy-f.ixigua.com;https://v5-dy-g.ixigua.com;https://v5-dy-h.ixigua.com;https://v5-dy-i.ixigua.com;https://v5-dy-j.ixigua.com;https://v6-dy-cold.ixigua.com;https://v9-dy-cold.ixigua.com;https://v92-dy.ixigua.com;https://v95-dy-a.ixigua.com;https://v95-dy.ixigua.com;https://txmov2.a.yximgs.com;
+https://v5-cold.douyinvod.com;https://v26-cold.douyinvod.com;https://v83-x.douyinvod.com;https://v3-c.douyinvod.com;https://v5-coldy.douyinvod.com;https://v3-cold.douyinvod.com;https://v5-coldb.douyinvod.com;https://v5-coldc.douyinvod.com;https://v1-cold.douyinvod.com;https://v95.douyinvod.com;https://v6-y.douyinvod.com;https://v83-y.douyinvod.com;https://v29-cold.douyinvod.com;https://v9-cold.douyinvod.com;https://v83.douyinvod.com;https://v6-cold.douyinvod.com;https://v11.douyinvod.com
 ```
 **抖音又换了很多域名而小程序后台最对可以配置200个downloadFile域名有点不够用了** 
 
