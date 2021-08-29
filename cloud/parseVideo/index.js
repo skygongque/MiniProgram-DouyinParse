@@ -86,13 +86,14 @@ async function parse(res_json) {
             try_count += 1;
             var realAddress = await getRealAddress(paly_address);
             console.log(realAddress);
-            // fs.writeFile('result.txt', realAddress + '\n', {
-            //     flag: 'a'
-            // }, (err) => {
-            //     console.log(err)
-            // })
-            var downloadFileUrls = ['http://v83.douyinvod.com', 'http://v6-cold.douyinvod.com', 'http://v1-cold.douyinvod.com',
-                'http://v5-coldb.douyinvod.com', 'http://v29-cold.douyinvod.com', 'http://v83-x.douyinvod.com', 'http://v83-y.douyinvod.com', 'http://v6-y.douyinvod.com', 'http://v5-coldy.douyinvod.com', 'http://v95.douyinvod.com', 'http://v3-cold.douyinvod.com', 'http://v5-cold.douyinvod.com', 'http://v3-c.douyinvod.com', 'http://v9-cold.douyinvod.com', 'http://v26-cold.douyinvod.com', 'http://v11.douyinvod.com', 'http://v5-coldc.douyinvod.com'];
+            
+            // downloadFileUrlsStr 填写小程序后台配置downloadfile合法域名（使用逗号隔开）；
+            var downloadFileUrlsStr = "https://txmov2.a.yximgs.com;https://v1-cold.douyinvod.com;https://v1-y.douyinvod.com;https://v1.douyinvod.com;https://v11-x.douyinvod.com;https://v11.douyinvod.com;https://v26-cold.douyinvod.com;https://v26.douyinvod.com;https://v29-cold.douyinvod.com;https://v29.douyinvod.com;https://v3-a.douyinvod.com;https://v3-b.douyinvod.com;https://v3-c.douyinvod.com;https://v3-cold.douyinvod.com;https://v3-d.douyinvod.com;https://v3-e.douyinvod.com;https://v3-x.douyinvod.com;https://v3-y.douyinvod.com;https://v3-z.douyinvod.com;https://v5-cold.douyinvod.com;https://v5-coldb.douyinvod.com;https://v5-coldc.douyinvod.com;https://v5-coldy.douyinvod.com;https://v5-e.douyinvod.com;https://v5-f.douyinvod.com;https://v5-g.douyinvod.com;https://v5-h.douyinvod.com;https://v5-i.douyinvod.com;https://v5-j.douyinvod.com;https://v6-cold.douyinvod.com;https://v6-x.douyinvod.com;https://v6-y.douyinvod.com;https://v6-z.douyinvod.com;https://v6.douyinvod.com;https://v83-c.douyinvod.com;https://v83-d.douyinvod.com;https://v83-x.douyinvod.com;https://v83-y.douyinvod.com;https://v83-z.douyinvod.com;https://v83.douyinvod.com;https://v9-cold.douyinvod.com;https://v9-x.douyinvod.com;https://v9-z.douyinvod.com;https://v9.douyinvod.com;https://v95.douyinvod.com;"
+            var downloadFileUrlsList = downloadFileUrlsStr.split(';')
+            downloadFileUrlsList.slice(-1) == '' ? downloadFileUrlsList = downloadFileUrlsList.slice(0,-1) : downloadFileUrlsList = downloadFileUrlsList;
+            var downloadFileUrls = downloadFileUrlsList.map((e)=>{
+                return e.replace('https','http');
+            });
             for (var j = 0; j < downloadFileUrls.length; j++) {
                 if (realAddress.search(downloadFileUrls[j]) !== -1) {
                     tested = true;
